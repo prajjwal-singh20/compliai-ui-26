@@ -64,9 +64,9 @@ function Hero() {
           <span className="highlight">Ship faster.</span>
         </h1>
         <p className="hero-subtitle">
-          CompliAI asks a few simple questions about your startup and then
-          turns India&apos;s laws into a clear, personalised compliance
-          blueprint.
+          CompliAI asks a few questions about your startup, then turns
+          India&apos;s complex compliance laws into a clear, personalised
+          roadmap. Know exactly what you need to register, file, and protect.
         </p>
         <div className="hero-cta-row">
           <button
@@ -77,10 +77,10 @@ function Hero() {
             }}
           >
             Get my compliance blueprint
-            <span>↘</span>
+            <span>→</span>
           </button>
           <a href="#risk" className="hero-secondary-link">
-            See what could go wrong
+            See potential risks
             <span>→</span>
           </a>
         </div>
@@ -195,11 +195,11 @@ function QuestionCard({ answers, setAnswers, onGenerate }) {
         </div>
         <div
           style={{
-            marginTop: 14,
+            marginTop: 18,
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            gap: 10,
+            gap: 12,
             flexWrap: "wrap"
           }}
         >
@@ -209,11 +209,11 @@ function QuestionCard({ answers, setAnswers, onGenerate }) {
             onClick={onGenerate}
           >
             Generate my compliance score
-            <span>✓</span>
+            <span>→</span>
           </button>
-          <p className="card-text" style={{ margin: 0, maxWidth: 360 }}>
-            We use your answers to tune the structure, registrations, risks, and
-            checklist. No personal data is sent anywhere in this demo.
+          <p className="card-text" style={{ margin: 0, maxWidth: 360, fontSize: "0.85rem" }}>
+            We use your answers to personalise the structure, registrations, risks, and
+            checklist. No personal data is retained in this demo.
           </p>
         </div>
       </div>
@@ -223,13 +223,14 @@ function QuestionCard({ answers, setAnswers, onGenerate }) {
 
 function FieldGroup({ label, children }) {
   return (
-    <label style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+    <label style={{ display: "flex", flexDirection: "column", gap: 6 }}>
       <span
         style={{
-          fontSize: "0.78rem",
+          fontSize: "0.75rem",
           textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          color: "#9ca3af"
+          letterSpacing: "0.1em",
+          color: "var(--text-dim)",
+          fontWeight: 600
         }}
       >
         {label}
@@ -238,12 +239,24 @@ function FieldGroup({ label, children }) {
         style: {
           width: "100%",
           borderRadius: 999,
-          border: "1px solid rgba(148,163,184,0.4)",
-          padding: "7px 11px",
-          fontSize: "0.85rem",
-          background: "rgba(15,23,42,0.9)",
-          color: "#e5e7eb",
-          outline: "none"
+          border: "1px solid rgba(148,163,184,0.25)",
+          padding: "9px 13px",
+          fontSize: "0.9rem",
+          background: "rgba(15,23,42,0.7)",
+          color: "var(--text-primary)",
+          outline: "none",
+          transition: "all 0.2s ease",
+          fontFamily: "inherit"
+        },
+        onFocus: (e) => {
+          e.target.style.background = "rgba(15,23,42,0.95)";
+          e.target.style.borderColor = "rgba(59,130,246,0.5)";
+          e.target.style.boxShadow = "0 0 0 2px rgba(59,130,246,0.1)";
+        },
+        onBlur: (e) => {
+          e.target.style.background = "rgba(15,23,42,0.7)";
+          e.target.style.borderColor = "rgba(148,163,184,0.25)";
+          e.target.style.boxShadow = "none";
         }
       })}
     </label>
@@ -253,16 +266,17 @@ function FieldGroup({ label, children }) {
 function LiveScorePreview() {
   return (
     <div className="score-card">
-      <div className="score-chip">Hackathon demo · MERN-ready</div>
+      <div className="score-chip">Live score example</div>
       <div className="score-main-row">
         <div className="score-circle">
           <span className="score-value">82</span>
         </div>
         <div className="score-meta">
-          <div className="score-label">Sample compliance score</div>
+          <div className="score-label">Compliance score</div>
           <p className="score-desc">
-            Plug in your JSON from the backend (Mongo/Express) and this widget
-            instantly updates to reflect your startup&apos;s legal posture.
+            Answer the questions below and your compliance score updates instantly.
+            See how your startup&apos;s legal posture improves as you implement
+            recommendations.
           </p>
         </div>
       </div>
@@ -424,9 +438,9 @@ function MainGrids({ compliance, generationId }) {
 function CardRegistrations({ registrations, hasCompliance }) {
   return (
     <div className="card">
-      <h2 className="section-title">Core registrations</h2>
+      <h2 className="section-title">📋 Registrations</h2>
       <div className="card-header">
-        <h3 className="card-title">ROC, tax &amp; brand stack</h3>
+        <h3 className="card-title">What you need to register</h3>
         <span className="card-tag">
           {registrations.length > 0
             ? `${registrations.length} items`
@@ -473,9 +487,9 @@ function CardRegistrations({ registrations, hasCompliance }) {
 function CardDocuments({ docs, hasCompliance }) {
   return (
     <div className="card">
-      <h2 className="section-title">Documentation</h2>
+      <h2 className="section-title">📄 Documentation</h2>
       <div className="card-header">
-        <h3 className="card-title">What you need on file</h3>
+        <h3 className="card-title">Essential documents to maintain</h3>
       </div>
       <ul className="list">
         {hasCompliance &&
@@ -502,9 +516,9 @@ function CardDocuments({ docs, hasCompliance }) {
 function CardRisks({ risks, hasCompliance }) {
   return (
     <div className="card">
-      <h2 className="section-title">Risk radar</h2>
+      <h2 className="section-title">⚠️ Risks</h2>
       <div className="card-header">
-        <h3 className="card-title">What can hurt you later</h3>
+        <h3 className="card-title">Potential compliance risks</h3>
         <span className="risk-pill">
           {hasCompliance && risks.length
             ? `${risks.length} active risks`
@@ -536,9 +550,9 @@ function CardRisks({ risks, hasCompliance }) {
 function CardChecklist({ checklist, hasCompliance }) {
   return (
     <div className="card">
-      <h2 className="section-title">Execution plan</h2>
+      <h2 className="section-title">✓ Action plan</h2>
       <div className="card-header">
-        <h3 className="card-title">Founder-facing checklist</h3>
+        <h3 className="card-title">Your step-by-step checklist</h3>
       </div>
       <ul className="list">
         {hasCompliance &&
