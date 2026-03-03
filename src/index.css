@@ -121,24 +121,22 @@ body {
   line-height: 1.15;
   letter-spacing: -0.025em;
   margin: 16px 0 12px;
-  color: var(--text-primary);
+  color: var(--accent);
   font-weight: 800;
 }
 
 .hero-title span.highlight {
-  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent);
   font-weight: 800;
 }
 
 .hero-subtitle {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   max-width: 38rem;
   font-size: 1rem;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .hero-cta-row {
@@ -256,10 +254,11 @@ body {
 }
 
 .score-desc {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.9rem;
   margin-top: 8px;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .section-grid {

@@ -273,7 +273,7 @@ function LiveScorePreview() {
         </div>
         <div className="score-meta">
           <div className="score-label">Compliance score</div>
-          <p className="score-desc">
+          <p className="score-desc" style={{ fontWeight: 600 }}>
             Answer the questions below and your compliance score updates instantly.
             See how your startup&apos;s legal posture improves as you implement
             recommendations.
