@@ -16,7 +16,7 @@
   --accent-cyan: #06b6d4;
 
   /* Text Colors */
-  --text-primary: color: #022c22;
+  --text-primary: #10b981;
   --text-secondary: #4485d3;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
@@ -126,7 +126,8 @@ body {
 }
 
 .hero-title span.highlight {
-  color: var(--accent);
+  color: #022c22;
+  /* color: var(--accent); */
   font-weight: 800;
 }
 
@@ -267,7 +268,7 @@ body {
 }
 
 .section-title {
-  color: #10b981;
+
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
