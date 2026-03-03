@@ -3,42 +3,42 @@
   --bg: #050814;
   --bg-elevated: #0a0f1f;
   --bg-card: #0f1423;
-  
+
   /* Accent Colors - Premium Green */
   --accent: #10b981;
   --accent-bright: #34d399;
   --accent-soft: rgba(16, 185, 129, 0.12);
   --accent-glow: rgba(16, 185, 129, 0.4);
-  
+
   /* Secondary Accents */
   --accent-blue: #3b82f6;
   --accent-blue-soft: rgba(59, 130, 246, 0.15);
   --accent-cyan: #06b6d4;
-  
+
   /* Text Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-primary: color: #022c22;
+  --text-secondary: #4485d3;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  
+
   /* Borders & Subtle */
   --border-subtle: rgba(148, 163, 184, 0.18);
   --border-light: rgba(203, 213, 225, 0.2);
   --divider: rgba(30, 41, 59, 0.6);
-  
+
   /* Status Colors */
   --danger: #ef4444;
   --danger-soft: rgba(239, 68, 68, 0.15);
   --success: #10b981;
   --warning: #f59e0b;
-  
+
   /* Shadows - Premium Multi-layered */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 0 32px rgba(16, 185, 129, 0.25);
-  
+
   /* Spacing & Radii */
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -229,11 +229,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(16, 185, 129, 0.15),
-    transparent 70%
-  );
+  background: radial-gradient(circle at 30% 30%,
+      rgba(16, 185, 129, 0.15),
+      transparent 70%);
   flex-shrink: 0;
 }
 
@@ -269,6 +267,7 @@ body {
 }
 
 .section-title {
+  color: #10b981;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -395,6 +394,7 @@ body {
     opacity: 0;
     transform: translateX(-24px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -406,6 +406,7 @@ body {
     opacity: 0;
     transform: translateX(24px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -425,6 +426,7 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -438,18 +440,23 @@ body {
 .list-item-animated:nth-child(1) {
   animation-delay: 0.03s;
 }
+
 .list-item-animated:nth-child(2) {
   animation-delay: 0.06s;
 }
+
 .list-item-animated:nth-child(3) {
   animation-delay: 0.09s;
 }
+
 .list-item-animated:nth-child(4) {
   animation-delay: 0.12s;
 }
+
 .list-item-animated:nth-child(5) {
   animation-delay: 0.15s;
 }
+
 .list-item-animated:nth-child(n + 6) {
   animation-delay: 0.18s;
 }
